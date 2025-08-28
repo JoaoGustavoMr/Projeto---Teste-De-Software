@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../Projeto - Teste De Software/css/index.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <title>Login</title>
+</head>
+<body>
+    <div id="containerLogin">
+        <h1>LOGIN</h1>
+        <div id="login">
+            <form id="loginForm">
+                <div class="input-container">
+                    <label for="username">Email:</label>
+                    <input type="text" id="username" name="username" required>
+                </div>
+                <div class="input-container">
+                    <label for="password">Senha:</label>
+                    <input type="password" id="password" name="password" required>
+                </div>
+                <div id="button-container">
+                    <button type="submit">Entrar</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        const validUser = "senai@gmail.com";
+        const validPass = "123qwe";
+
+        const form = document.getElementById("loginForm");
+
+        form.addEventListener("submit", function(e) {
+            e.preventDefault(); // impede envio real
+
+            const username = document.getElementById("username").value;
+            const password = document.getElementById("password").value;
+
+            if(username === validUser && password === validPass){
+                window.location.href = "../Projeto - Teste De Software/html/inicio.html";
+            } else {
+                alert("Usuário ou senha incorretos!");
+            }
+        });
+    </script>
+</body>
+</html>
